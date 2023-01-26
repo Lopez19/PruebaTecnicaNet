@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Nomina>
+
+@{
+    ViewData["Title"] = "Detalles .NET";
+}
+
+<h2>Detalles .NET</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Id_empleado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Documento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Cod_concepto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Desc_concepto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Nombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Apellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Val_nomina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Cantidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id_empleado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Documento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cod_concepto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desc_concepto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellidos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Val_nomina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Documento, evento = 2 }, new {@class = "btn btn-warning"})
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Documento }, new {@class="btn btn-danger"})
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+    
+</table>
+

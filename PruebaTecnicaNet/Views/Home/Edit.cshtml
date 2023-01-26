@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Nomina>
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="text-center m-5">
+    <h2>Prueba .NET - Editar</h2>
+</div>
+
+<div class="container d-flex justify-content-center align-items-center">
+
+    <div class="formulario w-50">
+       @foreach (Nomina item in Model)
+        {
+
+        <form asp-action="Edit" asp-controller="Home" method="post">
+            
+        
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="documento">No.</span>
+                <input type="text"
+                       class="form-control"
+                       name="documento"
+                       value="@Html.DisplayFor(modelItem => item.Documento)"
+                       required
+                       disabled
+                >
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="usuario">User</span>
+                <input type="text"
+                       class="form-control"
+                       name="usuario"
+                       placeholder="Ingrese el usuario"
+                       value=""
+                       autofocus
+                       required>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">
+                    Val. Nomina
+                </span>
+                <input type="number"
+                       class="form-control"
+                       name="val_nomina"
+                       value="@Html.DisplayFor(modelItem => item.Val_nomina)"
+                       autofocus
+                       required>
+            </div>
+            
+           
+            <button type="submit" name="enviar" class="btn btn-warning">Editar</button>
+            
+        </form>
+        }
+
+    </div>
+
+</div>
